@@ -6,19 +6,19 @@ import { InputField } from '../components/InputField'
 import { useMutation } from 'urql'
 
 const REGISTER_MUTATION = `
-mutation Register($name: String, $email: String, $username: String, $password: String){
-    register(
-      user: {
-                name: $name, 
-                email: $email, 
-                username: $username,
-                password: $password
-      }){
-      id,
-      name,
-      username
-    }
-  }
+        mutation Register($name: String, $email: String, $username: String!, $password: String!){
+            register(input: {name: $name, email: $email, username: $username, password: $password }){
+                user {
+                    id,
+                    name,
+                    username
+                },
+                errors {
+                    field,
+                    message
+                }
+            }
+        }
   `
 
 interface registerProps {
@@ -26,10 +26,10 @@ interface registerProps {
 }
 
 const Register: React.FC<registerProps> = ({}) => {
-    const [] = useMutation(REGISTER_MUTATION)
+    const [, register] = useMutation(REGISTER_MUTATION)
         return (
             <Wrapper variant="small">
-                <Formik initialValues={{name:"", email:"", username:"", password:""}} onSubmit={(values)=>console.log(values)}>
+                <Formik initialValues={{name:"", email:"", username:"", password:""}} onSubmit={(values)=>register(values)}>
                    {
                        ({values, handleChange, isSubmitting})=>(
                         <Form >

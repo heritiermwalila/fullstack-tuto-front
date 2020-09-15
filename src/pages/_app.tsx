@@ -1,6 +1,6 @@
 import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core'
 import { createClient, Provider } from 'urql';
-const client = createClient({ url: 'https://0ufyz.sse.codesandbox.io' });
+const client = createClient({ url: 'http://localhost:4000/graphql' });
 
 import theme from '../theme'
 
