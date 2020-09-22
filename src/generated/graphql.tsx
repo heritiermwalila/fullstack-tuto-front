@@ -21,6 +21,7 @@ export type Query = {
   post?: Maybe<Post>;
   users?: Maybe<Array<User>>;
   user?: Maybe<User>;
+  me: User;
 };
 
 
@@ -140,6 +141,17 @@ export type RegisterMutation = (
   )> }
 );
 
+export type UserQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type UserQuery = (
+  { __typename?: 'Query' }
+  & { me: (
+    { __typename?: 'User' }
+    & Pick<User, 'name' | 'email' | 'username'>
+  ) }
+);
+
 
 export const LoginDocument = gql`
     mutation Login($options: UserProps!) {
@@ -178,4 +190,17 @@ export const RegisterDocument = gql`
 
 export function useRegisterMutation() {
   return Urql.useMutation<RegisterMutation, RegisterMutationVariables>(RegisterDocument);
+};
+export const UserDocument = gql`
+    query User {
+  me {
+    name
+    email
+    username
+  }
+}
+    `;
+
+export function useUserQuery(options: Omit<Urql.UseQueryArgs<UserQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<UserQuery>({ query: UserDocument, ...options });
 };

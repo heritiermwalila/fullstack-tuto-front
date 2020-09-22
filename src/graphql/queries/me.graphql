@@ -1,0 +1,7 @@
+query User{
+  me{
+    name,
+    email,
+    username
+  }
+}
