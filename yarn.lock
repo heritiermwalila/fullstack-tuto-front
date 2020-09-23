@@ -1269,18 +1269,6 @@
     auto-bind "~4.0.0"
     tslib "~2.0.0"
 
-"@graphql-codegen/typescript-react-apollo@1.17.8":
-  version "2.0.7-alpha-be23c522.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-apollo/-/typescript-react-apollo-2.0.7-alpha-be23c522.0.tgz#7f8d3ba635cdee8fdc9e606d9fc13b28a2170580"
-  integrity sha512-zJjo3SSfHRKfnkVMAIJQX39jAW583w51p2C2s1FJeH6yFFuoOFsUQcFjm2cDpUReJCEGAB6+EMaD0pTiEM52+Q==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^1.17.8"
-    "@graphql-codegen/visitor-plugin-common" "1.17.15-alpha-be23c522.0"
-    auto-bind "~4.0.0"
-    camel-case "^4.1.1"
-    pascal-case "^3.1.1"
-    tslib "~2.0.1"
-
 "@graphql-codegen/typescript-urql@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-urql/-/typescript-urql-2.0.1.tgz#1232e7338df4eccb9e764d2c7f53d52d22081d14"
@@ -1300,21 +1288,6 @@
     "@graphql-codegen/plugin-helpers" "^1.17.8"
     "@graphql-codegen/visitor-plugin-common" "^1.17.14"
     auto-bind "~4.0.0"
-    tslib "~2.0.1"
-
-"@graphql-codegen/visitor-plugin-common@1.17.15-alpha-be23c522.0":
-  version "1.17.15-alpha-be23c522.0"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-1.17.15-alpha-be23c522.0.tgz#9e91ecc684570004ec21da9cfe1d99212c47ee90"
-  integrity sha512-FwE0WEM54w7aQQexjiobpHSnwCDAzZBmhGEiNQP0ublWO/SmwpDcNhB7DZK1CgbZa8T0lCmI5O5XOlKPlyraGQ==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^1.17.8"
-    "@graphql-tools/relay-operation-optimizer" "^6"
-    array.prototype.flatmap "^1.2.3"
-    auto-bind "~4.0.0"
-    dependency-graph "^0.9.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    pascal-case "^3.1.1"
     tslib "~2.0.1"
 
 "@graphql-codegen/visitor-plugin-common@^1.17.13", "@graphql-codegen/visitor-plugin-common@^1.17.14":
@@ -1477,7 +1450,7 @@
     tslib "~2.0.1"
     yaml-ast-parser "^0.0.43"
 
-"@graphql-tools/relay-operation-optimizer@^6", "@graphql-tools/relay-operation-optimizer@^6.0.18":
+"@graphql-tools/relay-operation-optimizer@^6.0.18":
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.2.2.tgz#136ccca5ea33466391a9295c33408b27fe675fe6"
   integrity sha512-4kU+X/IpTNtO1MS/rBxW1ybflFonZ1WeBV9gv4tqXGPpHywJsO3y085PwMumoNfBpF755UfEu6XjE43SPg0m1g==
@@ -1793,11 +1766,19 @@
   dependencies:
     "@types/node" "*"
 
-"@urql/core@^1.12.3":
+"@urql/core@>=1.13.0", "@urql/core@^1.12.3":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@urql/core/-/core-1.13.0.tgz#811154b5951b4282dd698a8c9dff4ff3825ca215"
   integrity sha512-g7Kn2a0TDQotOqvGR7bRC+JqviA4TYtiDZH5M9Roszx7LiqZBkViSr5zmdwlNZjR4kSDn+kSXlCV+Ht0Uqls0Q==
   dependencies:
+    wonka "^4.0.14"
+
+"@urql/exchange-graphcache@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@urql/exchange-graphcache/-/exchange-graphcache-3.1.1.tgz#c2298447588c284345de7685b42aab46762a848d"
+  integrity sha512-/Dxvu8dNMNRulzHdlj7c61LeBcvlQCaXInuIk2A2D0WgUALlMCdkRGrABk4+yRow6In9yunzcEd3VxoEQFt9Hw==
+  dependencies:
+    "@urql/core" ">=1.13.0"
     wonka "^4.0.14"
 
 "@use-it/event-listener@^0.1.2":

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Link } from '@chakra-ui/core'
+import { Flex, Box, Link, Button } from '@chakra-ui/core'
 import NavLink from 'next/link'
 import { useUserQuery } from '../generated/graphql'
 
@@ -24,7 +24,12 @@ const NavBar = () => {
             </>
         )
     }else {
-        body = (<Box>{data.me.username}</Box>)
+        body = (
+            <Flex>
+                <Box mr={2}>{data.me.username}</Box>
+                <Button variant="link">logout</Button>
+            </Flex>
+        )
     }
     return (
         <Flex bg="tomato" p={4}>

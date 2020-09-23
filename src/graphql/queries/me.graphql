@@ -1,7 +1,5 @@
 query User{
   me{
-    name,
-    email,
-    username
+    ...RegularUser
   }
 }

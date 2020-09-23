@@ -1,9 +1,7 @@
 mutation Login($options: UserProps!){
   login(input: $options){
     user {
-      name,
-      username,
-      email
+      ...RegularUser
     },
     errors {
       field,
